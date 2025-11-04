@@ -1,0 +1,50 @@
+export const mockOffers = [
+  {
+    id: 1,
+    offerTitle: "Software Engineering Internship Grant",
+    description: "Financial support for students pursuing summer internships in software engineering",
+    amount: 8000,
+    duration: "3 months",
+    type: "Internship Support",
+    requirements: "Must have secured a software engineering internship, GPA 3.0+",
+    deadline: "2025-12-01",
+    status: "active",
+    applicationProcess: "Direct",
+    targetMajors: ["Computer Science", "Software Engineering"],
+    additionalBenefits: ["Mentorship", "Professional Development"],
+    sponsorId: 1,
+    createdAt: "2025-09-01"
+  },
+  {
+    id: 2,
+    offerTitle: "Women in Tech Fellowship",
+    description: "Supporting female students in completing their final year projects in technology fields",
+    amount: 12000,
+    duration: "12 months",
+    type: "Fellowship",
+    requirements: "Female students in final year of tech-related programs",
+    deadline: "2025-11-15",
+    status: "active",
+    applicationProcess: "Competitive",
+    targetMajors: ["Computer Science", "Information Technology", "Data Science"],
+    additionalBenefits: ["Industry Mentorship", "Networking Events", "Conference Attendance"],
+    sponsorId: 1,
+    createdAt: "2025-08-15"
+  },
+  {
+    id: 3,
+    offerTitle: "Research Assistant Grant",
+    description: "Funding for students interested in pursuing research projects in AI and Machine Learning",
+    amount: 15000,
+    duration: "6 months",
+    type: "Research Grant",
+    requirements: "Strong background in AI/ML, research proposal required",
+    deadline: "2025-10-30",
+    status: "draft",
+    applicationProcess: "Competitive",
+    targetMajors: ["Computer Science", "Artificial Intelligence", "Mathematics"],
+    additionalBenefits: ["Lab Access", "Publication Support", "Conference Presentation"],
+    sponsorId: 1,
+    createdAt: "2025-09-10"
+  }
+];

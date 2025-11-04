@@ -1,0 +1,93 @@
+export const mockScholarships = [
+  {
+    id: 1,
+    title: "STEM Excellence Scholarship",
+    description: "Supporting outstanding students in Science, Technology, Engineering, and Mathematics fields with demonstrated academic excellence and innovative research projects.",
+    amount: 10000,
+    deadline: "2025-12-31",
+    requirements: "Must be a STEM major with GPA 3.5 or higher",
+    status: "active",
+    applicantCount: 145,
+    createdAt: "2025-08-01",
+    category: "STEM",
+    awardsAvailable: 5
+  },
+  {
+    id: 2,
+    title: "Future Leaders Grant",
+    description: "For students showing exceptional leadership potential in their community through meaningful initiatives and demonstrated impact in social causes.",
+    amount: 7500,
+    deadline: "2025-11-30",
+    requirements: "Must have leadership experience and community service",
+    status: "active",
+    applicantCount: 98,
+    createdAt: "2025-08-15",
+    category: "Leadership",
+    awardsAvailable: 3
+  },
+  {
+    id: 3,
+    title: "Arts & Humanities Fellowship",
+    description: "Supporting creative minds in arts, literature, and humanities who demonstrate exceptional talent and potential in their chosen field.",
+    amount: 6000,
+    deadline: "2025-12-15",
+    requirements: "Portfolio submission required, minimum GPA 3.0",
+    status: "draft",
+    applicantCount: 0,
+    createdAt: "2025-09-01",
+    category: "Arts",
+    awardsAvailable: 2
+  },
+  {
+    id: 4,
+    title: "Digital Innovation Award",
+    description: "Recognizing students who have shown exceptional creativity and innovation in digital technology, computer science, or related fields.",
+    amount: 12000,
+    deadline: "2025-10-15",
+    requirements: "Must submit a digital portfolio or project",
+    status: "active",
+    applicantCount: 167,
+    createdAt: "2025-07-15",
+    category: "Technology",
+    awardsAvailable: 2
+  },
+  {
+    id: 5,
+    title: "Environmental Sustainability Grant",
+    description: "Supporting students committed to environmental conservation and sustainability through research or practical projects.",
+    amount: 8000,
+    deadline: "2025-11-15",
+    requirements: "Must have environmental project or research proposal",
+    status: "active",
+    applicantCount: 89,
+    createdAt: "2025-08-20",
+    category: "Environment",
+    awardsAvailable: 4
+  },
+  {
+    id: 6,
+    title: "Healthcare Heroes Scholarship",
+    description: "Supporting aspiring healthcare professionals who demonstrate commitment to improving public health and medical care.",
+    amount: 15000,
+    deadline: "2025-09-30",
+    requirements: "Must be pursuing a degree in healthcare",
+    status: "closed",
+    applicantCount: 234,
+    createdAt: "2025-06-01",
+    category: "Healthcare",
+    awardsAvailable: 3
+  },
+  {
+    id: 7,
+    title: "Women in Engineering Grant",
+    description: "Empowering female students pursuing degrees in engineering fields with financial support and mentorship opportunities.",
+    amount: 9000,
+    deadline: "2026-01-15",
+    requirements: "Female students in engineering programs",
+    status: "active",
+    applicantCount: 112,
+    createdAt: "2025-09-10",
+    category: "Engineering",
+    awardsAvailable: 5
+  }
+];

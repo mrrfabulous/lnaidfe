@@ -1,0 +1,377 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* CSS Variables for design system */
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+  --card: #ffffff;
+  --card-foreground: #000000;
+  --popover: #ffffff;
+  --popover-foreground: #000000;
+  --primary: #000000;
+  --primary-foreground: #ffffff;
+  --secondary: #e85a5a;
+  --secondary-foreground: #ffffff;
+  --muted: #f8f9fa;
+  --muted-foreground: #5f6368;
+  --accent: #e85a5a;
+  --accent-foreground: #ffffff;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #e5e7eb;
+  --input: #f9fafb;
+  --ring: #e85a5a;
+  --radius: 8px;
+  
+  /* Uber-specific variables */
+  --uber-black: #000000;
+  --uber-white: #ffffff;
+  --uber-gray-50: #f8f9fa;
+  --uber-gray-100: #f1f3f4;
+  --uber-gray-200: #e8eaed;
+  --uber-gray-300: #dadce0;
+  --uber-gray-400: #9aa0a6;
+  --uber-gray-500: #5f6368;
+  --uber-gray-600: #3c4043;
+  --uber-gray-700: #202124;
+  --uber-gray-800: #171717;
+  --uber-gray-900: #000000;
+  
+  --coral-50: #fef7f7;
+  --coral-100: #fdeaea;
+  --coral-200: #fbd9d9;
+  --coral-300: #f7baba;
+  --coral-400: #f18f8f;
+  --coral-500: #e85a5a;
+  --coral-600: #d63c3c;
+  --coral-700: #b42d2d;
+  --coral-800: #952929;
+  --coral-900: #7c2727;
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  
+  /* Typography */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-uber: 0 2px 8px rgba(0, 0, 0, 0.12);
+  --shadow-uber-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+  
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 200ms ease;
+  --transition-slow: 300ms ease;
+  --transition-uber: 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.dark {
+  --background: #000000;
+  --foreground: #ffffff;
+  --card: #171717;
+  --card-foreground: #ffffff;
+  --popover: #171717;
+  --popover-foreground: #ffffff;
+  --primary: #ffffff;
+  --primary-foreground: #000000;
+  --secondary: #e85a5a;
+  --secondary-foreground: #ffffff;
+  --muted: #202124;
+  --muted-foreground: #9aa0a6;
+  --accent: #e85a5a;
+  --accent-foreground: #ffffff;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #3c4043;
+  --input: #202124;
+  --ring: #e85a5a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--muted);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted-foreground);
+  border-radius: 4px;
+  opacity: 0.5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+  opacity: 0.8;
+}
+
+/* Focus styles */
+.focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* Transitions */
+.fade-enter-active, .fade-leave-active {
+  transition: opacity var(--transition-normal);
+}
+
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+}
+
+.slide-enter-active, .slide-leave-active {
+  transition: all var(--transition-normal);
+}
+
+.slide-enter-from {
+  transform: translateX(100%);
+}
+
+.slide-leave-to {
+  transform: translateX(-100%);
+}
+
+/* Button hover effects */
+.btn-hover {
+  transition: all var(--transition-uber);
+}
+
+.btn-hover:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-uber-lg);
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all var(--transition-uber);
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-uber-lg);
+}
+
+/* Loading spinner */
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Form styles */
+.form-input {
+  @apply w-full px-4 py-3 border border-gray-200 rounded-xl bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-coral-500 focus:border-coral-500 transition-all duration-200;
+  font-size: var(--font-size-base);
+}
+
+.form-input:focus {
+  box-shadow: 0 0 0 3px rgba(232, 90, 90, 0.1);
+}
+
+.form-label {
+  @apply block text-sm font-semibold text-gray-700 mb-2;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply bg-coral-500 text-white px-6 py-3 rounded-xl font-semibold hover:bg-coral-600 focus:outline-none focus:ring-2 focus:ring-coral-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  transition: all var(--transition-uber);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-uber);
+}
+
+.btn-secondary {
+  @apply border-2 border-coral-500 text-coral-500 px-6 py-3 rounded-xl font-semibold hover:bg-coral-50 focus:outline-none focus:ring-2 focus:ring-coral-500 focus:ring-offset-2;
+  transition: all var(--transition-uber);
+}
+
+.btn-ghost {
+  @apply text-gray-700 hover:text-coral-500 px-4 py-2 rounded-lg;
+  transition: color var(--transition-normal);
+}
+
+/* Card styles */
+.card {
+  @apply bg-white rounded-2xl border border-gray-100;
+  box-shadow: var(--shadow-sm);
+}
+
+.card-hover {
+  transition: all var(--transition-uber);
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-uber);
+}
+
+/* Badge styles */
+.badge {
+  @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+}
+
+.badge-success {
+  @apply bg-green-100 text-green-800;
+}
+
+.badge-warning {
+  @apply bg-yellow-100 text-yellow-800;
+}
+
+.badge-error {
+  @apply bg-red-100 text-red-800;
+}
+
+.badge-info {
+  @apply bg-blue-100 text-blue-800;
+}
+
+.badge-coral {
+  @apply bg-coral-100 text-coral-800;
+}
+
+/* Typography */
+.heading-1 {
+  @apply text-4xl md:text-5xl font-bold text-gray-900 leading-tight;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+.heading-2 {
+  @apply text-3xl md:text-4xl font-bold text-gray-900 leading-tight;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+.heading-3 {
+  @apply text-2xl md:text-3xl font-bold text-gray-900 leading-tight;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+.body-large {
+  @apply text-lg md:text-xl text-gray-600 leading-relaxed;
+}
+
+.body-medium {
+  @apply text-base text-gray-600 leading-relaxed;
+}
+
+.body-small {
+  @apply text-sm text-gray-500 leading-relaxed;
+}
+
+/* Uber-specific utility classes */
+.uber-shadow {
+  box-shadow: var(--shadow-uber);
+}
+
+.uber-shadow-lg {
+  box-shadow: var(--shadow-uber-lg);
+}
+
+.uber-transition {
+  transition: all var(--transition-uber);
+}
+
+/* Animation utilities */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.3s ease-out;
+}
+
+/* Responsive utilities */
+@media (max-width: 640px) {
+  .form-input {
+    @apply px-3 py-2 text-base;
+  }
+  
+  .btn-primary, .btn-secondary {
+    @apply px-4 py-2 text-sm;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .btn-primary {
+    @apply border-2 border-black;
+  }
+  
+  .form-input {
+    @apply border-2 border-black;
+  }
+}
