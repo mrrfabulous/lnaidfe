@@ -1,6 +1,6 @@
 <template>
   <Sidebar
-    :navigation-items="navigationItems"
+    :navigation-items="sponsorNavigationItems"
     page-title="Sponsor Scholarships"
     page-subtitle="Manage all your scholarships"
   >
@@ -249,7 +249,7 @@ import { useAuthStore } from "../../../stores/auth";
 import { useScholarshipsStore } from "../../../stores/scholarships";
 import { useNotificationStore } from "../../../stores/notifications";
 import Sidebar from "../../../components/Sidebar.vue";
-import { navigationItems } from "../../../lib/data/navItems";
+import { sponsorNavigationItems } from "../../../lib/data/navItems";
 import { mockScholarships } from "../../../lib/data/mockScholarships";
 import {
   AcademicCapIcon,

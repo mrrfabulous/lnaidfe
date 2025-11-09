@@ -1,5 +1,5 @@
 <template>
-  <Sidebar :navigation-items="navigationItems" page-title="Create Scholarships">
+  <Sidebar :navigation-items="sponsorNavigationItems" page-title="Create Scholarships">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div class="mb-8">
         <h1 class="text-3xl font-bold text-gray-900">Create Funding Offer</h1>
@@ -559,7 +559,7 @@ import { useAuthStore } from "../../../stores/auth";
 import { useOffersStore } from "../../../stores/offers";
 import { useNotificationStore } from "../../../stores/notifications";
 import Sidebar from "../../../components/Sidebar.vue";
-import { navigationItems } from "../../../lib/data/navItems";
+import { sponsorNavigationItems } from "../../../lib/data/navItems";
 
 const router = useRouter();
 const authStore = useAuthStore();

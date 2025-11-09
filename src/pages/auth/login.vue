@@ -275,7 +275,7 @@ const handleLogin = async () => {
       if (role === "student") {
         router.push("/student/dashboard");
       } else if (role === "sponsor") {
-        router.push("/sponsor/dashboard");
+        router.push("/sponsor/dashboard"); 
       } else if (role === "educator") {
         router.push("/educator/dashboard");
       } else {

@@ -1,5 +1,9 @@
 <template>
-  <StudentSidebar>
+  <Sidebar
+  page-title=""
+    page-subtitle=""
+    :navigation-items="studentNavigationItems"
+    >
     <div class="min-h-screen bg-gray-50">
       <div v-if="!offer" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div class="text-center">
@@ -307,7 +311,7 @@
       @close="applicationModal.show = false"
       @success="handleApplicationSuccess"
     />
-  </StudentSidebar>
+  </Sidebar>
 </template>
 
 <script setup>
@@ -317,8 +321,10 @@ import { useAuthStore } from '../../../stores/auth'
 import { useOffersStore } from '../../../stores/offers'
 import { useApplicationsStore } from '../../../stores/applications'
 import { useNotificationStore } from '../../../stores/notifications'
-import StudentSidebar from '../../../components/StudentSidebar.vue'
+import Sidebar from '../../../components/Sidebar.vue'
+import { studentNavigationItems } from '../../../lib/data/navItems'
 import ApplicationModal from '../../../components/ApplicationModal.vue'
+
 import { 
   Calendar,
   Clock,

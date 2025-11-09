@@ -1,6 +1,9 @@
 <template>
 
-    <StudentSidebar>
+    <Sidebar 
+    page-title="Appeals"
+    :navigation-items="studentNavigationItems"
+    >
       <div class="min-h-screen bg-gray-50">
         <!-- Header -->
         <div class="bg-white border-b border-gray-200">
@@ -198,9 +201,9 @@
                   Click to upload ID Card
                 </button>
                 <p class="text-sm text-gray-500 mt-1">PDF, JPG, PNG up to 5MB</p>
-                <div v-if="form.documents.transcript" class="mt-2 text-sm text-green-600 flex items-center justify-center">
+                <div v-if="form.documents.idCard" class="mt-2 text-sm text-green-600 flex items-center justify-center">
                   <Check class="w-4 h-4 mr-1" />
-                  {{ form.documents.transcript.name }}
+                  {{ form.documents.idCard.name }}
                 </div>
               </div>
             </div>
@@ -224,9 +227,9 @@
                   Click to upload document
                 </button>
                 <p class="text-sm text-gray-500 mt-1">PDF, DOC, DOCX up to 5MB</p>
-                <div v-if="form.documents.proposal" class="mt-2 text-sm text-green-600 flex items-center justify-center">
+                <div v-if="form.documents.document" class="mt-2 text-sm text-green-600 flex items-center justify-center">
                   <Check class="w-4 h-4 mr-1" />
-                  {{ form.documents.proposal.name }}
+                  {{ form.documents.document.name }}
                 </div>
               </div>
             </div>
@@ -313,7 +316,7 @@
       </form>
     </div>
       </div>
-    </StudentSidebar>
+    </Sidebar>
 
 </template>
 
@@ -323,8 +326,9 @@ import { useRouter } from 'vue-router'
 import { useAuthStore } from '../../../stores/auth'
 import { useAppealsStore } from '../../../stores/appeals'
 import { useNotificationStore } from '../../../stores/notifications'
-import Layout from '../../../components/Layout.vue'
-import StudentSidebar from '../../../components/StudentSidebar.vue'
+import Sidebar from '../../../components/Sidebar.vue'
+import { studentNavigationItems } from '../../../lib/data/navItems'
+
 import { 
   ArrowLeft, 
   ArrowRight, 

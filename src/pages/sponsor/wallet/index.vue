@@ -1,5 +1,5 @@
 <template>
-  <Sidebar :navigation-items="navigationItems" page-title="Wallet & Finance">
+  <Sidebar :navigation-items="sponsorNavigationItems" page-title="Wallet & Finance">
     <div class="min-h-screen bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <!-- Loading State -->
@@ -250,7 +250,7 @@ import { useWalletStore } from '../../../stores/wallet.ts';
 import { useNotificationStore } from '../../../stores/notifications';
 import { useDisbursementsStore } from '../../../stores/disbursements.ts';
 import Sidebar from '../../../components/Sidebar.vue';
-import { navigationItems } from '../../../lib/data/navItems';
+import { sponsorNavigationItems } from '../../../lib/data/navItems';
 import { PlusIcon } from '@heroicons/vue/24/outline';
 
 const router = useRouter();

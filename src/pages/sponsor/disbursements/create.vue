@@ -1,5 +1,5 @@
 <template>
-  <Sidebar :navigation-items="navigationItems" page-title="Record Disbursement">
+  <Sidebar :navigation-items="sponsorNavigationItems" page-title="Record Disbursement">
     <div class="min-h-screen bg-gray-50">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <!-- Page Header -->
@@ -221,7 +221,7 @@ import { useDisbursementsStore } from '../../../stores/disbursements.ts';
 import { useNotificationStore } from '../../../stores/notifications';
 import Sidebar from '../../../components/Sidebar.vue';
 import DocumentUpload from '../../../components/DocumentUpload.vue';
-import { navigationItems } from '../../../lib/data/navItems';
+import { sponsorNavigationItems } from '../../../lib/data/navItems';
 import { mockOffers } from '../../../lib/data/mockOffers';
 import { mockScholarships } from '../../../lib/data/mockScholarships';
 

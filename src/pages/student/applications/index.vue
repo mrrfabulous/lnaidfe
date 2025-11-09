@@ -1,5 +1,9 @@
 <template>
-  <StudentSidebar>
+  <Sidebar
+  page-title="Applications"
+    page-subtitle="manage all your applications"
+    :navigation-items="studentNavigationItems" 
+  >
     <div class="min-h-screen bg-gray-50">
       <!-- Header -->
       <div class="bg-white border-b border-gray-200">
@@ -319,7 +323,7 @@
         </div>
       </div>
     </div>
-  </StudentSidebar>
+  </Sidebar>
 </template>
 
 <script setup>
@@ -328,7 +332,8 @@ import { useRouter } from 'vue-router'
 import { useAuthStore } from '../../../stores/auth'
 import { useApplicationsStore } from '../../../stores/applications'
 import { useNotificationStore } from '../../../stores/notifications'
-import StudentSidebar from '../../../components/StudentSidebar.vue'
+import Sidebar from '../../../components/Sidebar.vue'
+import { studentNavigationItems } from "../../../lib/data/navItems";
 import ApplicationModal from '../../../components/ApplicationModal.vue'
 import { 
   FileText,

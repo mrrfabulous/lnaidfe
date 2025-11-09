@@ -1,10 +1,10 @@
 <template>
-  <StudentSidebar
+  <Sidebar
     page-title="Student Dashboard"
     page-subtitle="Welcome back! Here's what's happening with your education funding."
-    :navigation-items="navigationItems"
+    :navigation-items="studentNavigationItems"
   >
-  >
+  
     <!-- Quick Stats -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
       <div
@@ -374,7 +374,7 @@
         </div>
       </div>
     </div>
-  </StudentSidebar>
+  </Sidebar>
 </template>
 
 <script setup>
@@ -383,56 +383,8 @@ import { useAuthStore } from "../../stores/auth";
 import { useAppealsStore } from "../../stores/appeals";
 import { useOffersStore } from "../../stores/offers";
 import { useAccountStore } from "../../stores/account";
-import StudentSidebar from "../../components/StudentSidebar.vue";
-import {
-  Home,
-  Heart,
-  Plus,
-  Search,
-  GraduationCap,
-  FileText,
-  User,
-  Settings as SettingsIcon,
-} from "lucide-vue-next";
-
-const navigationItems = [
-  {
-    name: "Dashboard",
-    href: "/student/dashboard",
-    icon: Home,
-  },
-  {
-    name: "Appeals",
-    icon: Heart,
-    children: [
-      { name: "My Appeals", href: "/student/appeals" },
-      { name: "Create Appeal", href: "/student/appeals/create" },
-    ],
-  },
-  {
-    name: "Opportunities",
-    icon: Search,
-    children: [
-      { name: "Browse Offers", href: "/student/offers" },
-      { name: "Scholarships", href: "/student/scholarships" },
-    ],
-  },
-  {
-    name: "Applications",
-    href: "/student/applications",
-    icon: FileText,
-  },
-  {
-    name: "Profile",
-    href: "/student/profile",
-    icon: User,
-  },
-  {
-    name: "Settings",
-    href: "/student/settings",
-    icon: SettingsIcon,
-  },
-];
+import Sidebar from "../../components/Sidebar.vue";
+import { studentNavigationItems } from "../../lib/data/navItems";
 
 const authStore = useAuthStore();
 const appealsStore = useAppealsStore();

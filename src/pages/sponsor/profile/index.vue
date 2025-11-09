@@ -1,5 +1,8 @@
 <template>
-  <Sidebar :navigation-items="navigationItems" page-title="Organization Profile">
+  <Sidebar 
+    :navigation-items="sponsorNavigationItems" 
+    page-title="Organization Profile"
+    >
     <div class="min-h-screen bg-gray-50">
       <!-- Loading State -->
       <div v-if="loading" class="flex justify-center items-center h-64">
@@ -329,7 +332,7 @@ import { computed, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { useSponsorProfileStore } from '../../../stores/sponsorProfile.ts';
 import Sidebar from '../../../components/Sidebar.vue';
-import { navigationItems } from '../../../lib/data/navItems';
+import { sponsorNavigationItems } from '../../../lib/data/navItems';
 import {
   PencilIcon,
   DocumentIcon,

@@ -1,5 +1,5 @@
 <template>
-  <StudentSidebar
+  <Sidebar
    page-title="Appeals"
     page-subtitle="manage your funding appeals"
     :navigation-items="studentNavigationItems" 
@@ -361,7 +361,7 @@
         </div>
       </div>
     </div>
-  </StudentSidebar>
+  </Sidebar>
 </template>
 
 <script setup>
@@ -370,7 +370,7 @@ import { useRouter } from "vue-router";
 import { useAuthStore } from "../../../stores/auth";
 import { useAppealsStore } from "../../../stores/appeals";
 import { useNotificationStore } from "../../../stores/notifications";
-import StudentSidebar from "../../../components/StudentSidebar.vue";
+import Sidebar from "../../../components/Sidebar.vue";
 import { studentNavigationItems } from "../../../lib/data/navItems";
 import {
   Plus,

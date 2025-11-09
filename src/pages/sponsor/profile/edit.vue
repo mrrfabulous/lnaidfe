@@ -1,5 +1,5 @@
 [<template>
-  <Sidebar :navigation-items="navigationItems" page-title="Edit Profile">
+  <Sidebar :navigation-items="sponsorNavigationItems" page-title="Edit Profile">
     <div class="min-h-screen bg-gray-50">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <form @submit.prevent="handleSubmit" class="space-y-8">
@@ -332,7 +332,7 @@ import { useRouter } from 'vue-router';
 import { useSponsorProfileStore } from '../../../stores/sponsorProfile';
 import { useNotificationStore } from '../../../stores/notifications';
 import Sidebar from '../../../components/Sidebar.vue';
-import { navigationItems } from '../../../lib/data/navItems';
+import { sponsorNavigationItems } from '../../../lib/data/navItems';
 
 const router = useRouter();
 const profileStore = useSponsorProfileStore();

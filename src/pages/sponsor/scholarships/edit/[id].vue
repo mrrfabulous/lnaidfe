@@ -1,5 +1,5 @@
 <template>
-  <Sidebar :navigation-items="navigationItems" page-title="Edit Scholarship">
+  <Sidebar :navigation-items="sponsorNavigationItems" page-title="Edit Scholarship">
     <div class="min-h-screen bg-gray-50">
       <!-- Loading State -->
       <div v-if="loading" class="flex justify-center items-center h-64">
@@ -202,7 +202,7 @@ import { useRoute, useRouter } from 'vue-router';
 import { useScholarshipsStore } from '../../../../stores/scholarships.js';
 import { useNotificationStore } from '../../../../stores/notifications.js';
 import Sidebar from '../../../../components/Sidebar.vue';
-import { navigationItems } from '../../../../lib/data/navItems.ts';
+import { sponsorNavigationItems } from '../../../../lib/data/navItems.ts';
 import { mockScholarships } from '../../../../lib/data/mockScholarships.ts';
 import { ExclamationCircleIcon } from '@heroicons/vue/24/outline';
 

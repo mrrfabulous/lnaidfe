@@ -2,6 +2,7 @@
   <Sidebar
     page-title="Settings"
     page-subtitle="Manage your account settings and preferences"
+    :navigation-items="studentNavigationItems"
   >
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div class="mb-8">
@@ -361,7 +362,8 @@ import { ref, reactive, onMounted } from "vue";
 import { useAuthStore } from "../../stores/auth";
 import { useAccountStore } from "../../stores/account";
 import { useNotificationStore } from "../../stores/notifications";
-import Sidebar from "../../components/StudentSidebar.vue";
+import Sidebar from "../../components/Sidebar.vue";
+import { studentNavigationItems } from "../../lib/data/navItems";
 
 const authStore = useAuthStore();
 const accountStore = useAccountStore();

@@ -1,5 +1,9 @@
 <template>
-  <StudentSidebar>
+  <Sidebar
+  page-title="Offers"
+    page-subtitle="manage your funding offers"
+    :navigation-items="studentNavigationItems" 
+  >
     <div class="min-h-screen bg-gray-50">
       <!-- Header -->
       <div class="bg-white border-b border-gray-200">
@@ -339,7 +343,7 @@
       @close="applicationModal.show = false"
       @success="handleApplicationSuccess"
     />
-  </StudentSidebar>
+  </Sidebar>
 </template>
 
 <script setup>
@@ -350,7 +354,8 @@ import { useOffersStore } from "../../../stores/offers";
 import { useAccountStore } from "../../../stores/account";
 import { useApplicationsStore } from "../../../stores/applications";
 import { useNotificationStore } from "../../../stores/notifications";
-import StudentSidebar from "../../../components/StudentSidebar.vue";
+import Sidebar from "../../../components/Sidebar.vue";
+import { studentNavigationItems } from "../../../lib/data/navItems";
 import ApplicationModal from "../../../components/ApplicationModal.vue";
 import {
   Briefcase,

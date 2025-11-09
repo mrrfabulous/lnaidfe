@@ -1,6 +1,6 @@
 <template>
   <Sidebar 
-    :navigation-items="navigationItems" 
+    :navigation-items="sponsorNavigationItems" 
     page-title="Settings"
     page-subtitle="Manage your account settings and preferences"
   >
@@ -676,7 +676,7 @@ import { useNotificationStore } from '../../stores/notifications'
 import ApplicationReview from '../../components/ApplicationReview.vue'
 import InterviewScheduleModal from '../../components/InterviewScheduleModal.vue'
 import Sidebar from '../../components/Sidebar.vue'
-import { navigationItems } from "../../lib/data/navItems";
+import { sponsorNavigationItems } from "../../lib/data/navItems";
 const authStore = useAuthStore()
 const offersStore = useOffersStore()
 const scholarshipsStore = useScholarshipsStore()

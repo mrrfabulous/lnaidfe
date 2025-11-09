@@ -66,38 +66,38 @@ export const API_ENDPOINTS = {
       DETAILS: "/details",
       EDIT: "/sponsor/edit-profile",
       UPLOAD_DOCUMENT: "/sponsor/upload-document",
+      REQUEST_NEW_OTP: "/sponsor/request-new-otp",
     },
-    REQUEST_NEW_OTP: "/sponsor/request-new-otp",
-  },
-  SCHOLARSHIPS: {
-    CREATE: "/sponsor/create-scholarship",
-    GET_ALL: "/sponsor/get-scholarships",
-    GET_ONE: "/sponsor/get-scholarship",
-    UPDATE: "/sponsor/update-scholarship",
-    UPDATE_STATUS: "/sponsor/update-scholarship-status",
-    DELETE: "/sponsor/delete-scholarship",
-    APPLY: "/sponsor/apply-scholarship",
-  },
-  APPEAL: {
-    CREATE: "/sponsor/create-appeal",
-    GET_ALL: "/sponsor/get-appeals",
-    GET_ONE: "/sponsor/get-appeal",
-    UPDATE: "/sponsor/update-appeal",
-    UPDATE_STATUS: "/sponsor/update-appeal-status",
-    DELETE: "/sponsor/delete-appeal",
-    APPLY: "/sponsor/apply-appeal",
-  },
-  PAYMENTS: {
-    // payment endpoints
-  },
+    SCHOLARSHIPS: {
+      CREATE: "/sponsor/create-scholarship",
+      GET_ALL: "/sponsor/get-scholarships",
+      GET_ONE: "/sponsor/get-scholarship",
+      UPDATE: "/sponsor/update-scholarship",
+      UPDATE_STATUS: "/sponsor/update-scholarship-status",
+      DELETE: "/sponsor/delete-scholarship",
+      APPLY: "/sponsor/apply-scholarship",
+    },
+    APPEAL: {
+      CREATE: "/sponsor/create-appeal",
+      GET_ALL: "/sponsor/get-appeals",
+      GET_ONE: "/sponsor/get-appeal",
+      UPDATE: "/sponsor/update-appeal",
+      UPDATE_STATUS: "/sponsor/update-appeal-status",
+      DELETE: "/sponsor/delete-appeal",
+      APPLY: "/sponsor/apply-appeal",
+    },
+    PAYMENTS: {
+      // payment endpoints
+    },
 
-  OFFER: {
-    CREATE: "/sponsor/create-offer",
-    GET_ALL: "/sponsor/get-all-offers",
-    GET_ONE: "/sponsor/get-offer",
-    // offers endpoint
-  },
-  // Sponsor Payments/Billing
+    OFFER: {
+      CREATE: "/sponsor/create-offer",
+      GET_ALL: "/sponsor/get-all-offers",
+      GET_ONE: "/sponsor/get-offer",
+      // offers endpoint
+    },
+    // Sponsor Payments/Billing
+  }
 }
 
 

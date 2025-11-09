@@ -1,6 +1,10 @@
 <!-- pages/student/offers/[id].vue -->
 <template>
-  <StudentSidebar>
+  <Sidebar 
+    page-title="Offer Details"
+    page-subtitle="comprehensive overview of the opportunity"
+    :navigation-items="studentNavigationItems"
+  >
     <!-- Not Found State -->
     <div v-if="!offer" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div class="text-center">
@@ -419,7 +423,7 @@
       @close="() => (applicationModal.show = false)"
       @success="handleApplicationSuccess"
     />
-  </StudentSidebar>
+  </Sidebar>
 </template>
 
 <script setup>
@@ -429,7 +433,8 @@ import { useOffersStore } from "../../../stores/offers";
 import { useAccountStore } from "../../../stores/account";
 import { useApplicationsStore } from "../../../stores/applications";
 import { useNotificationStore } from "../../../stores/notifications";
-import StudentSidebar from "../../../components/StudentSidebar.vue";
+import Sidebar from "../../../components/Sidebar.vue";
+import { studentNavigationItems } from "../../../lib/data/navItems";
 import ApplicationModal from "../../../components/ApplicationModal.vue";
 
 import {

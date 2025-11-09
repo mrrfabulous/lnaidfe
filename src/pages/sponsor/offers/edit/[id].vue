@@ -1,5 +1,5 @@
 <template>
-  <Sidebar :navigation-items="navigationItems" page-title="Edit Offer">
+  <Sidebar :navigation-items="sponsorNavigationItems" page-title="Edit Offer">
     <div class="min-h-screen bg-gray-50">
       <!-- Loading State -->
       <div v-if="loading" class="flex justify-center items-center h-64">
@@ -281,7 +281,7 @@ import { useRoute, useRouter } from 'vue-router';
 import { useOffersStore } from '../../../../stores/offers.js';
 import { useNotificationStore } from '../../../../stores/notifications.js';
 import Sidebar from '../../../../components/Sidebar.vue';
-import { navigationItems } from '../../../../lib/data/navItems.ts';
+import { sponsorNavigationItems } from '../../../../lib/data/navItems.ts';
 import { mockOffers } from '../../../../lib/data/mockOffers.ts';
 import {
   PlusIcon,

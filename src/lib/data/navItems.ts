@@ -7,6 +7,11 @@ import {
   FileText,
   User,
   Settings as SettingsIcon,
+  Wallet,
+  Tag,
+  GraduationCap,
+  HandCoins,
+  BarChart2,
 } from "lucide-vue-next";
 
 interface NavItemChild {
@@ -60,41 +65,53 @@ export const studentNavigationItems: NavigationItem[] = [
   },
 ];
 
-export const sponsorNnavigationItems: NavigationItem[] = [
+export const sponsorNavigationItems: NavigationItem[] = [
   {
     name: "Dashboard",
-    href: "/student/dashboard",
+    href: "/sponsor/dashboard",
     icon: Home,
   },
   {
-    name: "Appeals",
-    icon: Heart,
+    name: "Wallet",
+    icon: Wallet,
     children: [
-      { name: "My Appeals", href: "/student/appeals" },
-      { name: "Create Appeal", href: "/student/appeals/create" },
+      { name: "Overview", href: "/sponsor/wallet" },
+      { name: "Transactions", href: "/sponsor/wallet/transactions" },
     ],
   },
   {
-    name: "Opportunities",
-    icon: Search,
+    name: "Offers",
+    icon: Tag,
     children: [
-      { name: "Browse Offers", href: "/student/offers" },
-      { name: "Scholarships", href: "/student/scholarships" },
+      { name: "My Offers", href: "/sponsor/offers" },
+      { name: "Create Offer", href: "/sponsor/offers/create" },
+    ],
+  },
+  {
+    name: "Scholarships",
+    icon: GraduationCap,
+    children: [
+      { name: "My Scholarships", href: "/sponsor/scholarships" },
+      { name: "Create Scholarship", href: "/sponsor/scholarships/create" },
     ],
   },
   {
     name: "Applications",
-    href: "/student/applications",
+    href: "/sponsor/manage-applications",
     icon: FileText,
   },
   {
-    name: "Profile",
-    href: "/student/profile",
-    icon: User,
+    name: "Disbursements",
+    icon: HandCoins,
+    children: [
+      { name: "All Disbursements", href: "/sponsor/disbursements" },
+      { name: "Record Disbursement", href: "/sponsor/disbursements/create" },
+    ],
   },
+
   {
-    name: "Settings",
-    href: "/student/settings",
-    icon: SettingsIcon,
-  },
+    name: "Analytics",
+    href: "/sponsor/analytics",
+    icon: BarChart2,
+  }
 ];

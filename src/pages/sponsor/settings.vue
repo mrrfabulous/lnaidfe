@@ -1,5 +1,5 @@
 <template>
-  <Sidebar :navigation-items="navigationItems" page-title="Settings"
+  <Sidebar :navigation-items="sponsorNavigationItems" page-title="Settings"
     page-subtitle="Manage your account settings and preferences">
 
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -437,7 +437,7 @@ import { useRouter } from 'vue-router'
 import { useAuthStore } from '../../stores/auth'
 import { useNotificationStore } from '../../stores/notifications'
 import Sidebar from '../../components/Sidebar.vue'
-import { navigationItems } from "../../lib/data/navItems";
+import { sponsorNavigationItems } from "../../lib/data/navItems";
 import { PlusIcon, PencilIcon, TrashIcon, CheckCircleIcon } from '@heroicons/vue/24/outline'
 
 const router = useRouter()

@@ -1,8 +1,8 @@
 <template>
   <Sidebar
-    :navigation-items="navigationItems"
-    page-title="Sponsor Dashboard"
-    page-subtitle="Manage your funding programs and track their impact."
+  page-title="Sponsor Dashboard"
+  page-subtitle="Manage your funding programs and track their impact."
+  :navigation-items="sponsorNavigationItems"
   >
     <!-- Quick Stats with Trends -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
@@ -13,8 +13,7 @@
           <div>
             <p class="text-sm font-medium text-gray-600">Active Programs</p>
             <p class="text-3xl font-bold text-gray-900 mt-2">
-              2
-              <!-- {{ activePrograms }} -->
+            {{ activePrograms }}
             </p>
           </div>
           <div class="p-3 bg-blue-100 rounded-xl">
@@ -38,8 +37,7 @@
             <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
             </svg>
-            <!-- +{{ activeProgramsTrend }}% -->
-            +10%
+            +{{ activeProgramsTrend }}%
           </span>
           <span class="text-xs text-gray-500 ml-2">vs last month</span>
         </div>
@@ -52,8 +50,7 @@
           <div>
             <p class="text-sm font-medium text-gray-600">Total Funded</p>
             <p class="text-3xl font-bold text-gray-900 mt-2">
-              ₦10000
-              <!-- ₦{{ totalFunded.toLocaleString() }} -->
+              ₦{{ totalFunded.toLocaleString() }}
             </p>
           </div>
           <div class="p-3 bg-green-100 rounded-xl">
@@ -77,23 +74,20 @@
             <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
             </svg>
-            <!-- +{{ fundingTrend }}% -->
-            +20%
+            +{{ fundingTrend }}%            
           </span>
           <span class="text-xs text-gray-500 ml-2">vs last month</span>
         </div>
         <div class="mt-4 h-1 bg-gray-100 rounded-full">
           <div 
-            class="h-1 bg-green-500 rounded-full" >
-          <!-- <div 
             class="h-1 bg-green-500 rounded-full" 
             :style="{ width: `${(totalFunded / fundingTarget) * 100}%` }"
-          > -->
+          >
         </div>
         </div>
         <div class="mt-2 flex justify-between text-xs text-gray-500">
           <span>Progress</span>
-          <!-- <span>{{ Math.round((totalFunded / fundingTarget) * 100) }}% of target</span> -->
+          <span>{{ Math.round((totalFunded / fundingTarget) * 100) }}% of target</span>
         </div>
       </div>
 
@@ -104,8 +98,7 @@
           <div>
             <p class="text-sm font-medium text-gray-600">Students Helped</p>
             <p class="text-3xl font-bold text-gray-900 mt-2">
-              <!-- {{ studentsHelped }}  -->
-              10
+              {{ studentsHelped }} 
             </p>
           </div>
           <div class="p-3 bg-purple-100 rounded-xl">
@@ -129,8 +122,7 @@
             <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
             </svg>
-            <!-- +{{ studentsTrend }}% -->
-            +1%
+            +{{ studentsTrend }}%            
           </span>
           <span class="text-xs text-gray-500 ml-2">vs last month</span>
         </div>
@@ -140,11 +132,8 @@
             <div class="h-1 bg-gray-100 rounded-full">
               <div 
                 class="h-1 bg-purple-500 rounded-full" 
-              ></div>
-              <!-- <div 
-                class="h-1 bg-purple-500 rounded-full" 
                 :style="{ width: `${(scholarshipStudents / studentsHelped) * 100}%` }"
-              ></div> -->
+              ></div>
             </div>
           </div>
           <div class="flex-1">
@@ -152,11 +141,8 @@
             <div class="h-1 bg-gray-100 rounded-full">
               <div 
                 class="h-1 bg-blue-500 rounded-full" 
-              ></div>
-              <!-- <div 
-                class="h-1 bg-blue-500 rounded-full" 
                 :style="{ width: `${(offerStudents / studentsHelped) * 100}%` }"
-              ></div> -->
+              ></div>
             </div>
           </div>
         </div>
@@ -171,8 +157,7 @@
               Pending Applications
             </p>
             <p class="text-3xl font-bold text-gray-900 mt-2">
-              <!-- {{ pendingApplications }} -->
-              12
+              {{ pendingApplications }}              
             </p>
           </div>
           <div class="p-3 bg-coral-100 rounded-xl">
@@ -193,14 +178,11 @@
         </div>
         <div class="flex items-center">
           <span 
-            class="text-sm font-medium flex items-center text-green-600"
-          >
-          <!-- <span 
             :class="[
               'text-sm font-medium flex items-center',
               applicationsTrend > 0 ? 'text-green-600' : 'text-red-600'
             ]"
-          > -->
+          >
             <svg 
               class="w-4 h-4 mr-1" 
               fill="none" 
@@ -222,34 +204,27 @@
                 d="M19 14l-7 7m0 0l-7-7m7 7V3"
               ></path>
             </svg>
-            <!-- {{ applicationsTrend > 0 ? '+' : '' }}{{ applicationsTrend }}% -->
-              0
+            {{ applicationsTrend > 0 ? '+' : '' }}{{ applicationsTrend }}%            
           </span>
           <span class="text-xs text-gray-500 ml-2">vs last month</span>
         </div>
         <div class="mt-4">
           <div class="flex justify-between text-xs text-gray-500 mb-1">
             <span>Response Rate</span>
-            0
-            <!-- <span>{{ responseRate }}%</span> -->
+            <span>{{ responseRate }}%</span>
           </div>
           <div class="h-1 bg-gray-100 rounded-full">
             <div 
-              class="h-1 bg-coral-500 rounded-full"               
-            ></div>
-            <!-- <div 
               class="h-1 bg-coral-500 rounded-full" 
               :style="{ width: `${responseRate}%` }"
-            ></div> -->
+            ></div>
           </div>
         </div>
       </div>
     </div>
 
-
-
     <!-- Quick Actions -->
-    <!-- <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-8">
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-8">
       <div class="flex justify-between items-center mb-6">
         <h3 class="text-lg font-semibold text-gray-900">Quick Actions</h3>
       </div>
@@ -374,13 +349,13 @@
           </svg>
         </router-link>
       </div>
-    </div> -->
+    </div>
 
     
     
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
       <!-- Recent Applications -->
-      <!-- <div class="bg-white rounded-2xl shadow-sm border border-gray-100">
+      <div class="bg-white rounded-2xl shadow-sm border border-gray-100">
         <div class="p-6 border-b border-gray-100">
           <div class="flex justify-between items-center">
             <h2 class="text-xl font-bold text-gray-900">Recent Applications</h2>
@@ -450,10 +425,10 @@
             </div>
           </div>
         </div>
-      </div> -->
+      </div>
 
       <!-- Program Performance -->
-      <!-- <div class="bg-white rounded-2xl shadow-sm border border-gray-100">
+     <div class="bg-white rounded-2xl shadow-sm border border-gray-100">
         <div class="p-6 border-b border-gray-100">
           <div class="flex justify-between items-center">
             <h2 class="text-xl font-bold text-gray-900">Program Performance</h2>
@@ -496,11 +471,11 @@
             </div>
           </div>
         </div>
-      </div> -->
+      </div> 
     </div>
 
     <!-- Impact Summary -->
-    <!-- <div class="mt-8 bg-white rounded-2xl p-8 text-black">
+    <div class="mt-8 bg-white rounded-2xl p-8 text-black">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="text-center">
           <div class="text-4xl font-bold mb-2">{{ totalImpact.students }}</div>
@@ -517,45 +492,40 @@
           <div class="text-coral-500">Active Programs</div>
         </div>
       </div>
-    </div> -->
+    </div>
   </Sidebar>
 </template>
 
 <script setup>
-  import { navigationItems } from "../../lib/data/navItems";
   import Sidebar from "../../components/Sidebar.vue";  
-</script>
-<!-- <script setup>
-import { ref, computed, onMounted } from "vue";
-import { format, subDays, eachDayOfInterval, startOfMonth, endOfMonth } from 'date-fns';
-import { Line, Bar } from 'vue-chartjs';
-import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, BarElement, Title, Tooltip, Legend } from 'chart.js';
-import { useAuthStore } from "../../stores/auth";
-import { useOffersStore } from "../../stores/offers";
-import { useScholarshipsStore } from "../../stores/scholarships";
-import Sidebar from "../../components/Sidebar.vue";
-import { navigationItems } from "../../lib/data/navItems";
-
-// Register ChartJS components
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarElement, Title, Tooltip, Legend);
-
-const authStore = useAuthStore();
-const offersStore = useOffersStore();
-const scholarshipsStore = useScholarshipsStore();
-
-// Chart state
-const chartPeriod = ref('month');
-const selectedMetric = ref('applications');
-
-onMounted(() => {
-  offersStore.initializeOffers();
-  scholarshipsStore.initializeScholarships();
-});
-
-const sponsorOffers = computed(
-  () => offersStore.getSponsorOffers(authStore.user?.id) || []
-);
-
+  import { sponsorNavigationItems } from "../../lib/data/navItems";
+  import { ref, computed, onMounted } from "vue";
+  import { format, subDays, eachDayOfInterval, startOfMonth, endOfMonth } from 'date-fns';
+  import { Line, Bar } from 'vue-chartjs';
+  import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, BarElement, Title, Tooltip, Legend } from 'chart.js';
+  import { useAuthStore } from "../../stores/auth";
+  import { useOffersStore } from "../../stores/offers";
+  import { useScholarshipsStore } from "../../stores/scholarships";
+  
+  // Register ChartJS components
+  ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarElement, Title, Tooltip, Legend);
+  
+  const authStore = useAuthStore();
+  const offersStore = useOffersStore();
+  const scholarshipsStore = useScholarshipsStore();
+  
+  // Chart state
+  const chartPeriod = ref('month');
+  const selectedMetric = ref('applications');
+  
+  onMounted(() => {
+    offersStore.initializeOffers();
+    scholarshipsStore.initializeScholarships();
+  });
+  const sponsorOffers = computed(
+    () => offersStore.getSponsorOffers(authStore.user?.id) || []
+  );
+  
 const sponsorScholarships = computed(
   () => scholarshipsStore.getSponsorScholarships(authStore.user?.id) || []
 );
@@ -824,4 +794,4 @@ const formatStatus = (status) => {
 const formatDate = (dateString) => {
   return new Date(dateString).toLocaleDateString();
 };
-</script> -->
+</script> 

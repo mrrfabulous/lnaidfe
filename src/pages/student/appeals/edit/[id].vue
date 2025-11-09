@@ -1,6 +1,10 @@
 <template>
 
-    <StudentSidebar>
+    <Sidebar
+    page-title="Edit Funding Appeal"
+    page-subtitle=""
+    :navigation-items="studentNavigationItems"
+    >
       <div class="min-h-screen bg-gray-50">
         <!-- Header -->
         <div class="bg-white border-b border-gray-200">
@@ -215,7 +219,7 @@
           </form>
         </div>
       </div>
-    </StudentSidebar>
+    </Sidebar>
 
 </template>
 
@@ -224,8 +228,8 @@ import { ref, reactive, onMounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { useAppealsStore } from '../../../../stores/appeals'
 import { useNotificationStore } from '../../../../stores/notifications'
-import Layout from '../../../../components/Layout.vue'
-import StudentSidebar from '../../../../components/StudentSidebar.vue'
+import Sidebar from '../../../../components/Sidebar.vue'
+import { studentNavigationItems } from '../../../../lib/data/navItems'
 import { ArrowLeft } from 'lucide-vue-next'
 
 const router = useRouter()

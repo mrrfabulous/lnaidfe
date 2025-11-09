@@ -1,5 +1,9 @@
 <template>
-  <StudentSidebar>
+  <Sidebar
+    page-title="Scholarships"
+    page-subtitle="manage your scholarship applications"
+    :navigation-items="studentNavigationItems" 
+  >
     <div class="min-h-screen bg-gray-50">
       <!-- Header -->
       <div class="bg-white border-b border-gray-200">
@@ -441,7 +445,7 @@
         @submit="handleApplicationSubmit"
       />
     </div>
-  </StudentSidebar>
+  </Sidebar>
 </template>
 
 <script setup>
@@ -451,7 +455,8 @@ import { useAuthStore } from "../../../stores/auth";
 import { useNotificationStore } from "../../../stores/notifications";
 import { useAccountStore } from "../../../stores/account";
 import { useApplicationsStore } from "../../../stores/applications";
-import StudentSidebar from "../../../components/StudentSidebar.vue";
+import Sidebar from "../../../components/Sidebar.vue";
+import { studentNavigationItems } from "../../../lib/data/navItems";
 import ApplicationModal from "../../../components/ApplicationModal.vue";
 
 import {

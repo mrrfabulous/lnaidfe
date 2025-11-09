@@ -1,5 +1,9 @@
 <template>
-  <StudentSidebar>
+  <Sidebar
+  page-title="Application Details"
+    page-subtitle="application overview and status"
+    :navigation-items="studentNavigationItems"
+  >
     <div v-if="!application" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div class="text-center">
         <h1 class="text-2xl font-bold text-gray-900">Application not found</h1>
@@ -400,7 +404,7 @@
         </div>
       </div>
     </div>
-  </StudentSidebar>
+  </Sidebar>
 </template>
 
 <script setup>
@@ -409,7 +413,8 @@ import { useRoute, useRouter } from 'vue-router'
 import { useAuthStore } from '../../../stores/auth'
 import { useNotificationStore } from '../../../stores/notifications'
 import { useApplicationsStore } from '../../../stores/applications'
-import StudentSidebar from '../../../components/StudentSidebar.vue'
+import Sidebar from '../../../components/Sidebar.vue'
+import { studentNavigationItems } from '../../../lib/data/navItems'
 
 const route = useRoute()
 const router = useRouter()

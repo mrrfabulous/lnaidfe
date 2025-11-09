@@ -1,5 +1,9 @@
 <template>
-  <StudentSidebar>
+  <Sidebar
+  page-title="Scholarship Details"
+    page-subtitle=""
+    :navigation-items="studentNavigationItems"
+  >
     <!-- Not Found State -->
     <div
       v-if="!scholarship"
@@ -432,7 +436,7 @@
         @submit="handleApplicationSubmit"
       />
     </div>
-  </StudentSidebar>
+  </Sidebar>
 </template>
 
 <script setup>
@@ -441,7 +445,8 @@ import { useRoute } from "vue-router";
 import { useScholarshipsStore } from "../../../stores/scholarships";
 import { useAccountStore } from "../../../stores/account";
 import { useNotificationStore } from "../../../stores/notifications";
-import StudentSidebar from "../../../components/StudentSidebar.vue";
+import Sidebar from "../../../components/Sidebar.vue";
+import { studentNavigationItems } from "../../../lib/data/navItems";
 import ApplicationModal from "../../../components/ApplicationModal.vue";
 
 import {

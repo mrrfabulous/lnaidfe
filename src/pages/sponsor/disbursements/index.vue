@@ -1,5 +1,5 @@
 <template>
-  <Sidebar :navigation-items="navigationItems" page-title="Disbursements">
+  <Sidebar :navigation-items="sponsorNavigationItems" page-title="Disbursements">
     <div class="min-h-screen bg-gray-50 py-8">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Page Header -->
@@ -178,7 +178,7 @@ import { ref, computed, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { useDisbursementsStore } from '../../../stores/disbursements.ts';
 import Sidebar from '../../../components/Sidebar.vue';
-import { navigationItems } from '../../../lib/data/navItems';
+import { sponsorNavigationItems } from '../../../lib/data/navItems';
 import {
   PlusIcon,
   DocumentIcon

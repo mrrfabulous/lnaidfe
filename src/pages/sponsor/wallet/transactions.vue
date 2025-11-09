@@ -1,5 +1,5 @@
 <template>
-  <Sidebar :navigation-items="navigationItems" page-title="Wallet Transactions">
+  <Sidebar :navigation-items="sponsorNavigationItems" page-title="Wallet Transactions">
     <div class="min-h-screen bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <!-- Page Header -->
@@ -166,7 +166,7 @@ import { ref, computed, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { useWalletStore } from '../../../stores/wallet.ts';
 import Sidebar from '../../../components/Sidebar.vue';
-import { navigationItems } from '../../../lib/data/navItems';
+import { sponsorNavigationItems } from '../../../lib/data/navItems';
 import { DocumentIcon } from '@heroicons/vue/24/outline';
 
 const router = useRouter();
